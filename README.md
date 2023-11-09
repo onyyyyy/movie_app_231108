@@ -1,15 +1,15 @@
 ## 설치항목
 
 [] styled-components
-[] react-router-dom
+[X] react-router-dom
 [] style.reset
-[] helmet
+[] react-helmet
 [] font-awesome
 [] react-hook-form
 
 ## TODO
 
-[] router 설정
+[X] router 설정
 [] 각 component 제작
 [] api 설정
 [] Home 컴포넌트 구성
