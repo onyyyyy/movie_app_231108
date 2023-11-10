@@ -3,12 +3,16 @@ import styled from "styled-components";
 import { routes } from "../routes";
 import { mainColors } from "../style/GlobalStyled";
 
-const Sheader = styled.div`
+const Sheader = styled.header`
   width: 100%;
   padding: 20px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
 `;
 const Logo = styled.div`
   font-size: 26px;
@@ -16,9 +20,6 @@ const Logo = styled.div`
   a {
     color: ${mainColors.pointColor};
   }
-  position: fixed;
-  top: 0;
-  left: 0;
 `;
 const Menu = styled.ul`
   display: flex;

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { nowPlaying } from "../../api";
 
 const MainBanner = styled.div`
   height: 80vh;
@@ -40,6 +41,8 @@ const BlackBg = styled.div`
 `;
 
 export const Home = () => {
+  nowPlaying();
+
   return (
     <MainBanner>
       <BlackBg />
