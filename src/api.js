@@ -12,6 +12,5 @@ const options = {
   },
 };
 
-export const nowPlaying = fetch(nowPlayingUrl, options).then((res) =>
-  res.json()
-);
+export const nowPlaying = () =>
+  fetch(nowPlayingUrl, options).then((res) => res.json());
