@@ -15,6 +15,7 @@ export const GlobalStyled = createGlobalStyle`
 
     body{
         background-color: ${mainColors.blackColor};
+        font-family: 'Noto Sans KR', sans-serif;
         color: white;
         letter-spacing: -1px;
         word-break: break-all;
