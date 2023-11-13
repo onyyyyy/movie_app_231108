@@ -14,3 +14,5 @@ const options = {
 
 export const nowPlaying = () =>
   fetch(nowPlayingUrl, options).then((res) => res.json());
+
+// options => 추가적으로 요청 할 옵션
