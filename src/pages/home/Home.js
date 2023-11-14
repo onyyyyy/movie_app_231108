@@ -1,10 +1,13 @@
 import styled from "styled-components";
 import { nowPlaying } from "../../api";
 import { useEffect, useState } from "react";
+import { IMG_URL } from "../../constants";
 
 const MainBanner = styled.div`
   height: 80vh;
   background-color: lightgray;
+  background: url(${IMG_URL}/original/${(props) => props.$bgUrl}) no-repeat
+    center / cover;
   position: relative;
   padding: 400px 5%;
   h3,
@@ -13,6 +16,8 @@ const MainBanner = styled.div`
   }
 
   h3 {
+    max-width: 650px;
+    width: 100%;
     font-size: 80px;
     font-weight: 700;
     margin-bottom: 30px;
@@ -21,10 +26,23 @@ const MainBanner = styled.div`
   }
 
   p {
+    max-width: 650px;
+    width: 100%;
     font-size: 18px;
     font-weight: 400;
     line-height: 26px;
     opacity: 0.8;
+  }
+
+  @media screen and (max-width: 450px) {
+    h3 {
+      font-size: 50px;
+      line-height: 65px;
+    }
+
+    p {
+      font-size: 16px;
+    }
   }
 `;
 
@@ -47,7 +65,7 @@ export const Home = () => {
   // 3. 예외 처리
 
   const [nowPlayingData, setNowPlayingData] = useState();
-  const [loading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
     (async () => {
@@ -62,25 +80,20 @@ export const Home = () => {
     })();
   }, []);
 
-  console.log(loading);
+  console.log(isLoading);
   console.log(nowPlayingData);
 
   return (
     <>
-      {loading ? (
+      {isLoading ? (
         "loading..."
       ) : (
         <div>
           {nowPlayingData && (
-            <MainBanner>
+            <MainBanner $bgUrl={nowPlayingData[0].backdrop_path}>
               <BlackBg />
               <h3>{nowPlayingData[0].title}</h3>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia
-                suscipit distinctio temporibus perferendis similique, quos et
-                labore obcaecati nihil quibusdam, at, doloribus quaerat sed
-                consequuntur magnam magni veniam saepe earum?
-              </p>
+              <p>{nowPlayingData[0].overview.slice(0, 100) + "..."}</p>
             </MainBanner>
           )}
         </div>
