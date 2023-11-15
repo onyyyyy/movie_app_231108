@@ -6,12 +6,15 @@
 [] react-helmet
 [] font-awesome
 [] react-hook-form
+[] swiper
 
 ## TODO
 
 [X] router 설정
 [X] 각 component 제작
-[] api 설정
-[X] Home ui 및 전체 구성
-[X] Detail ui 및 전체 구성
-[X] Search ui 및 전체 구성
+[X] api 설정
+[] loading 설정
+[] Home ui 및 전체 구성
+[] Detail ui 및 전체 구성
+[] Search ui 및 전체 구성
+[] 404 page 및 전체 구성

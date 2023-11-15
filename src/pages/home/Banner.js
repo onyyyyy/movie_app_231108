@@ -57,12 +57,12 @@ const BlackBg = styled.div`
   left: 0;
 `;
 
-export const Banner = ({ BannerData }) => {
+export const Banner = ({ bannerData }) => {
   return (
-    <MainBanner $bgUrl={BannerData.backdrop_path}>
+    <MainBanner $bgUrl={bannerData.backdrop_path}>
       <BlackBg />
-      <h3>{BannerData.title}</h3>
-      <p>{BannerData.overview.slice(0, 100) + "..."}</p>
+      <h3>{bannerData.title}</h3>
+      <p>{bannerData.overview.slice(0, 100) + "..."}</p>
     </MainBanner>
   );
 };

@@ -1,6 +1,12 @@
 import { nowPlaying } from "../../api";
 import { useEffect, useState } from "react";
 import { Banner } from "./Banner";
+import "swiper/css";
+import { ShowMovie } from "./ShowMovie";
+import { ClimbingBoxLoader } from "react-spinners";
+import styled from "styled-components";
+
+const Loding = styled.div``;
 
 export const Home = () => {
   // 1. 마운트시 api에 요청
@@ -28,10 +34,19 @@ export const Home = () => {
 
   return (
     <>
-      {isLoading ? (
-        "loading..."
+      {!isLoading ? (
+        <Loding>
+          <ClimbingBoxLoader color="#e3d554" />
+        </Loding>
       ) : (
-        <div>{nowPlayingData && <Banner BannerData={nowPlayingData[0]} />}</div>
+        <div>
+          {nowPlayingData && (
+            <>
+              <Banner bannerData={nowPlayingData[0]} />
+              <ShowMovie showMovieData={nowPlayingData} />
+            </>
+          )}
+        </div>
       )}
     </>
   );
@@ -39,3 +54,5 @@ export const Home = () => {
 
 // results 비구조화할당
 // 배열
+// ... 스프레드 연산자
+// breakpoints = 반응형 관련
