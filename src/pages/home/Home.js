@@ -1,12 +1,9 @@
 import { nowPlaying } from "../../api";
 import { useEffect, useState } from "react";
 import { Banner } from "./Banner";
-import "swiper/css";
-import { ShowMovie } from "./ShowMovie";
-import { ClimbingBoxLoader } from "react-spinners";
-import styled from "styled-components";
 
-const Loding = styled.div``;
+import { ShowMovie } from "./ShowMovie";
+import { Loading } from "../Loading";
 
 export const Home = () => {
   // 1. 마운트시 api에 요청
@@ -34,10 +31,8 @@ export const Home = () => {
 
   return (
     <>
-      {!isLoading ? (
-        <Loding>
-          <ClimbingBoxLoader color="#e3d554" />
-        </Loding>
+      {isLoading ? (
+        <Loading />
       ) : (
         <div>
           {nowPlayingData && (

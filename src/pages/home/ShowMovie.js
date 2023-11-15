@@ -2,6 +2,7 @@ import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
+import "swiper/css";
 
 const Layout = styled.section`
   padding: 150px 5%;
