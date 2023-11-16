@@ -4,8 +4,8 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Link } from "react-router-dom";
 import "swiper/css";
 
-const Layout = styled.section`
-  padding: 150px 5%;
+const Container = styled.section`
+  margin-bottom: 80px;
 `;
 
 const Title = styled.h3`
@@ -56,10 +56,10 @@ const params = {
   },
 };
 
-export const ShowMovie = ({ showMovieData }) => {
+export const ShowMovie = ({ titleName, showMovieData }) => {
   return (
-    <Layout>
-      <Title>현재 상영 영화</Title>
+    <Container>
+      <Title>{titleName}</Title>
       <Swiper {...params}>
         {showMovieData.map((data) => (
           <SwiperSlide key={data.id}>
@@ -70,6 +70,6 @@ export const ShowMovie = ({ showMovieData }) => {
           </SwiperSlide>
         ))}
       </Swiper>
-    </Layout>
+    </Container>
   );
 };
