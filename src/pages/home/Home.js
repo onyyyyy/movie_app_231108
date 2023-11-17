@@ -2,9 +2,9 @@ import { nowPlaying, popular, topRated, upcoming } from "../../api";
 import { useEffect, useState } from "react";
 import { Banner } from "./Banner";
 import { ShowMovie } from "./ShowMovie";
-import { Loading } from "../Loading";
 import { Layout } from "../../components/Layout";
 import { PageTitle } from "../../components/PageTitle";
+import { Loading } from "../../components/Loading";
 
 export const Home = () => {
   // 1. 마운트시 api에 요청
@@ -61,10 +61,10 @@ export const Home = () => {
               <Banner bannerData={nowPlayingData[0]} />
               <Layout>
                 <ShowMovie
-                  titleName={"현재 상영 영화"}
+                  titleName={"현재 상영작"}
                   showMovieData={nowPlayingData}
                 />
-                <ShowMovie titleName={"인기 영화"} showMovieData={popData} />
+                <ShowMovie titleName={"인기 상영작"} showMovieData={popData} />
                 <ShowMovie
                   titleName={"영화 랭킹"}
                   showMovieData={topRatedData}

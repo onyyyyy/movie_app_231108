@@ -1,0 +1,83 @@
+const Container = styled.div``;
+
+const Poster = styled.div`
+  width: 45%;
+  height: 80vh;
+  background-color: lightblue;
+  background: url(${IMG_URL}/original/${(props) => props.$bgUrl}) no-repeat
+    center / cover;
+`;
+
+const TitleWrap = styled.div``;
+
+const Title = styled.div``;
+
+const Information = styled.div``;
+
+const Grade = styled.div``;
+
+const Genre = styled.ul``;
+
+const Premiere = styled.div``;
+
+const Runtime = styled.div``;
+
+const Line = styled.div``;
+
+const Pwrap = styled.div``;
+
+-----------------------------------------------------
+
+{/* <Container>
+    //   <Poster $bgUrl={movieDetailData.poster_path}></Poster>
+    //   <TitleWrap>
+    //     <Title>{movieDetailData.title}</Title>
+    //     <Information>
+    //       <Grade>평점 {movieDetailData.vote_average}점</Grade>
+    //       <Genre>
+    //         <li>애니메이션</li>
+    //         <li>가족</li>
+    //         <li>SF</li>
+    //       </Genre>
+    //       <Premiere>개봉일 {movieDetailData.release_date}</Premiere>
+    //       <Runtime>런타임 {movieDetailData.runtime}분</Runtime>
+    //     </Information>
+    //     <Line></Line>
+    //     <Pwrap>
+    //       <p>{movieDetailData.overview}</p>
+    //     </Pwrap>
+    //   </TitleWrap>
+    // </Container> */}
+
+    ---------------------------------------------------
+
+    <>
+      {isLoading ? (
+        <Loading />
+      ) : (
+        <>
+          {movieData && (
+            <>
+              <Container>
+                <Poster $bgUrl={movieData.poster_path}></Poster>
+                <Wrap>
+                  <Title>{movieData.title}</Title>
+                  <Information>
+                    <Grade>평점 {movieData.vote_average}점</Grade>
+                    <Genre>
+                      {movieDetail.genres.map((genre) => (
+                        <li key={genre.id}>{genre.name}</li>
+                      ))}
+                    </Genre>
+                    <Premiere>개봉일 {movieData.release_date}</Premiere>
+                    <Runtime>런타임 {movieData.runtime}분</Runtime>
+                  </Information>
+                  <Line></Line>
+                  <p>{movieData.overview}</p>
+                </Wrap>
+              </Container>
+            </>
+          )}
+        </>
+      )}
+    </>
