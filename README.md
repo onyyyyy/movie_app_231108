@@ -22,4 +22,4 @@
 [] header 스크롤 이벤트 설정
 [] 전체 페이지 helmet 구성
 [] 404 page 및 전체 구성
-[] helmet 사용시 경고처리
+[X] helmet 사용시 경고처리

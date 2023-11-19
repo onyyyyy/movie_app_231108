@@ -1,7 +1,7 @@
 import { ClimbingBoxLoader } from "react-spinners";
 import styled from "styled-components";
 
-const SLoding = styled.div`
+const SLoading = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
@@ -11,8 +11,8 @@ const SLoding = styled.div`
 
 export const Loading = () => {
   return (
-    <SLoding>
+    <SLoading>
       <ClimbingBoxLoader color="#e3d554" />
-    </SLoding>
+    </SLoading>
   );
 };

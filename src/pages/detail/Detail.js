@@ -84,7 +84,7 @@ export const Detail = () => {
                 <Wrap>
                   <Title>{movieData.title}</Title>
                   <Information>
-                    <Grade>평점 {movieData.vote_average}점</Grade>
+                    <Grade>평점 {Math.round(movieData.vote_averag)}점</Grade>
                     <Genre>
                       {movieData.genres.map((genre) => (
                         <li key={genre.id}>{genre.name}</li>
