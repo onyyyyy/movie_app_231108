@@ -5,6 +5,7 @@ const nowPlayingUrl = baseUrl + "movie/now_playing" + "?language=ko-kr";
 const popularUrl = baseUrl + "movie/popular" + "?language=ko-kr";
 const topRatedUrl = baseUrl + "movie/top_rated" + "?language=ko-kr";
 const upcomingUrl = baseUrl + "movie/upcoming" + "?language=ko-kr";
+// const searchUrl = baseUrl + "search/movie" + "?language=ko-kr";
 
 const options = {
   method: "GET",
@@ -32,3 +33,11 @@ export const movieDetail = (id) => {
   const detailUrl = baseUrl + `movie/${id}` + "?language=ko-kr";
   return fetch(detailUrl, options).then((res) => res.json());
 };
+
+export const movieSearch = (keyword) => {
+  const searchUrl = baseUrl + `search/movie?query=${keyword}&language=ko-kr`;
+  return fetch(searchUrl, options).then((res) => res.json());
+};
+
+// export const movieSearch = () =>
+//   fetch(searchUrl, options).then((res) => res.json());

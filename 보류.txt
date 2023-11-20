@@ -81,3 +81,64 @@ const Pwrap = styled.div``;
         </>
       )}
     </>
+
+    ////////////////////////////////////////////////////////
+
+   search 페이지
+
+   import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { movieSearch } from "../../api";
+
+export const Search = () => {
+  // api에 검색 요청에 맞게 url연결과 매개변수 작성
+  // form 사용시 useForm 사용
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, isValid },
+  } = useForm({
+    mode: "onSubmit",
+  });
+
+  const SearchHandler = (data) => {
+    // console.log(data);
+    const { search } = data;
+    console.log("검색결과: " + search);
+    useEffect(() => {
+      (async () => {
+        try {
+          await movieSearch;
+        } catch (error) {
+          console.log("Error : " + error);
+        }
+      })();
+    }, []);
+  };
+
+  // const [searchData, setSearchData] = useState();
+
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const a = await movieSearch();
+  //       setSearchData(a);
+  //     } catch (error) {}
+  //   })();
+  // }, []);
+
+  return (
+    <div>
+      <h3 style={{ marginTop: "200px" }}>찾으시는 영화가 있으신가요?</h3>
+
+      <form onSubmit={handleSubmit(SearchHandler)}>
+        <input
+          {...register("search", { required: "검색 내용을 입력해주세요" })}
+          type="text"
+          placeholder="영화 검색"
+        />
+      </form>
+    </div>
+  );
+};
