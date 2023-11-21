@@ -4,6 +4,7 @@ import { movieDetail } from "../../api";
 import styled from "styled-components";
 import { Loading } from "../../components/Loading";
 import { IMG_URL } from "../../constants";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 const Container = styled.div`
   padding: 100px 150px;
@@ -64,9 +65,10 @@ const Information = styled.div`
 const Grade = styled.div``;
 
 const Genre = styled.ul`
-  padding-left: 7%;
+  padding-left: 5%;
   li {
     list-style: disc;
+    line-height: 30px;
   }
 `;
 
@@ -89,6 +91,7 @@ export const Detail = () => {
   // console.log(id);
   const [movieData, setMovieData] = useState();
   const [isLoading, setIsLoading] = useState(true);
+  useScrollTop();
 
   useEffect(() => {
     (async () => {
@@ -102,7 +105,7 @@ export const Detail = () => {
     })();
   }, []);
 
-  console.log(movieData);
+  // console.log(movieData);
   return (
     <>
       {isLoading ? (

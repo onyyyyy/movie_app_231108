@@ -5,6 +5,7 @@ import { ShowMovie } from "./ShowMovie";
 import { Layout } from "../../components/Layout";
 import { PageTitle } from "../../components/PageTitle";
 import { Loading } from "../../components/Loading";
+import { useScrollTop } from "../../lib/useScrollTop";
 
 export const Home = () => {
   // 1. 마운트시 api에 요청
@@ -16,6 +17,7 @@ export const Home = () => {
   const [topRatedData, setTopRatedData] = useState();
   const [upcomingData, setUpcomingData] = useState();
   const [isLoading, setLoading] = useState(true);
+  useScrollTop();
 
   useEffect(() => {
     (async () => {
