@@ -103,7 +103,7 @@ export const Detail = () => {
         console.log("Error:" + error);
       }
     })();
-  }, []);
+  }, [id]);
 
   // console.log(movieData);
   return (
