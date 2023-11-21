@@ -1,7 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { movieSearch } from "../../api";
-import { Layout } from "../../components/Layout";
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
 
