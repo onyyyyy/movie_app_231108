@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { movieSearch } from "../../api";
 import styled from "styled-components";
 import { IMG_URL } from "../../constants";
+import { Layout } from "../../components/Layout";
 
 const Wrap = styled.div``;
 
@@ -89,16 +90,18 @@ export const Search = () => {
         />
       </Form>
 
-      {term && (
-        <ConWrap>
-          {term.map((data) => (
-            <Con key={data.id}>
-              <Bg $bgUrl={data.backdrop_path} />
-              <MovieTitle>{data.title}</MovieTitle>
-            </Con>
-          ))}
-        </ConWrap>
-      )}
+      <Layout>
+        {term && (
+          <ConWrap>
+            {term.map((data) => (
+              <Con key={data.id}>
+                <Bg $bgUrl={data.backdrop_path} />
+                <MovieTitle>{data.title}</MovieTitle>
+              </Con>
+            ))}
+          </ConWrap>
+        )}
+      </Layout>
     </Wrap>
   );
 };
