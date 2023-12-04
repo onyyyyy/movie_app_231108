@@ -30,12 +30,12 @@ export const upcoming = () =>
   fetch(upcomingUrl, options).then((res) => res.json());
 
 export const movieDetail = (id) => {
-  const detailUrl = baseUrl + `movie/${id}` + "?language=ko-kr";
+  const detailUrl = baseUrl + `movie/${id}` + "?language=ko-KR";
   return fetch(detailUrl, options).then((res) => res.json());
 };
 
 export const movieSearch = (keyword) => {
-  const searchUrl = baseUrl + `search/movie?query=${keyword}&language=ko-kr`;
+  const searchUrl = baseUrl + `search/movie?query=${keyword}&language=ko-KR`;
   return fetch(searchUrl, options).then((res) => res.json());
 };
 

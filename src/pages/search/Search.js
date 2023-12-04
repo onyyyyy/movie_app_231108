@@ -17,7 +17,7 @@ const Input = styled.input``;
 
 const ConWrap = styled.div`
   display: grid;
-  /* =>grid가 적용 될 부무에게 사용, 플렉스와 동일 */
+  /* =>grid가 적용 될 부문에게 사용, 플렉스와 동일 */
   grid-template-columns: repeat(5, 1fr);
   /* =>그리드 레이아웃을 규칙에 맞게 반복시킴
   =>repeat(가로 갯수, 크기값)

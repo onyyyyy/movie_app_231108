@@ -3,10 +3,10 @@
 [X] styled-components
 [X] react-router-dom
 [X] styled-reset
-[] react-helmet
+[X] react-helmet
 [] font-awesome
-[] react-hook-form
-[] swiper
+[X] react-hook-form
+[X] swiper
 
 ## TODO
 

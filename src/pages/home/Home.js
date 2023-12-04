@@ -24,6 +24,7 @@ export const Home = () => {
       try {
         const { results: nowResults } = await nowPlaying();
         setNowPlayingData(nowResults);
+        // console.log(results[0].title);
 
         const { results: popResults } = await popular();
         setPopData(popResults);
@@ -38,7 +39,6 @@ export const Home = () => {
         // console.log(upcomingResults);
 
         setLoading(false);
-        // console.log(results[0].title);
       } catch (error) {
         console.log("에러:" + error);
       }
